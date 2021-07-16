@@ -75,6 +75,7 @@ reconcile_ade_tables <- function(ade_tables, ...) {
 #' Make a single-line strings with all ADEs, still grouped by frequency
 #'
 #' @param ade_table data frame with appropriate layout
+#' @sep string, the separator between side effect frequency groups
 #' @inheritDotParams reconcile_ade_tables
 #'
 #' @return
@@ -83,12 +84,12 @@ reconcile_ade_tables <- function(ade_tables, ...) {
 #'
 #' @export
 #'
-simplify_ades <- function(ade_table, ...) {
+simplify_ades <- function(ade_table, sep = " | ", ...) {
 	if (length(ade_table) > 1 & is.null(list(...)$level)) {
 		return(map_valid(ade_table, simplify_ades, level = 2))
 	}
 	
 	with(ade_table, sprintf("%s: %s", frequency, ades)) %>%
-		paste(collapse = " | ")
+		paste(collapse = sep)
 }
 
