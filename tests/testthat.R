@@ -1,4 +1,4 @@
 library(testthat)
-library(spcscrapr)
+library(promedreadr)
 
-test_check("spcscrapr")
+test_check("promedreadr")
