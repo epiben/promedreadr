@@ -3,7 +3,7 @@
 # promedreadr
 
 <!-- badges: start -->
-[![Build Status](https://www.travis-ci.com/epiben/promedreadr.svg?token=jPFag7F7DJzmhXYLiSqy&branch=dev)](https://www.travis-ci.com/epiben/promedreadr) <!-- badges: end -->
+[![Travis build status](https://travis-ci.com/epiben/promedreadr.svg?branch=main)](https://travis-ci.com/epiben/promedreadr) <!-- badges: end -->
 
 The goal of `promedreadr` is to provide a simple tool for collecting information from <https://pro.medicin.dk>, a key reference on medicines marketed in Denmark.
 

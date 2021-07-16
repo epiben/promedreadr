@@ -22,6 +22,7 @@ find_unique_set <- function(x, sep = ", ") {
 #'
 #' @param x list whose elements should be mapped, except for NULL elements
 #' @param fun function to apply
+#' @param ... arguments passed to function
 #'
 #' @return
 #'

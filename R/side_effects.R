@@ -20,7 +20,7 @@ fetch_ade_tables <- function(url) {
 	}
 	
 	frequency_labels <- c("almindelige", # covers very common, common and not common
-						  "sjældne", # covers rare and very rare
+						  "sj\u00e6ldne", # sjældne; covers rare and very rare
 						  "ikke kendt" # unknown
 						  )
 	frequency_regex <- paste(sprintf("(%s)", frequency_labels), collapse = "|")
@@ -75,7 +75,7 @@ reconcile_ade_tables <- function(ade_tables, ...) {
 #' Make a single-line strings with all ADEs, still grouped by frequency
 #'
 #' @param ade_table data frame with appropriate layout
-#' @sep string, the separator between side effect frequency groups
+#' @param sep string, the separator between side effect frequency groups
 #' @inheritDotParams reconcile_ade_tables
 #'
 #' @return

@@ -10,6 +10,8 @@ map_valid(x, fun, ...)
 \item{x}{list whose elements should be mapped, except for NULL elements}
 
 \item{fun}{function to apply}
+
+\item{...}{arguments passed to function}
 }
 \value{
 

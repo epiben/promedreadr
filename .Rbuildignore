@@ -3,3 +3,4 @@
 internal/
 ^README\.Rmd$
 ^LICENSE\.md$
+^\.travis\.yml

@@ -4,10 +4,12 @@
 \alias{simplify_ades}
 \title{Make a single-line strings with all ADEs, still grouped by frequency}
 \usage{
-simplify_ades(ade_table, ...)
+simplify_ades(ade_table, sep = " | ", ...)
 }
 \arguments{
 \item{ade_table}{data frame with appropriate layout}
+
+\item{sep}{string, the separator between side effect frequency groups}
 
 \item{...}{
   Arguments passed on to \code{\link[=reconcile_ade_tables]{reconcile_ade_tables}}
