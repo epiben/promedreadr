@@ -12,7 +12,6 @@ Imports:
 	forcats,
 	magrittr,
 	purrr,
-	RSelenium,
 	rvest,
 	tidyr,
 	stringr
