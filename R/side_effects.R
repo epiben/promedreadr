@@ -3,6 +3,7 @@
 #' ADE tables are fetches if they exist (based on a quite simplistic heuristic about their content.)
 #'
 #' @param url character vector, full URL(s) for product page(s).
+#' @inheritParams fetch_product_name
 #'
 #' @return
 #'
@@ -10,7 +11,7 @@
 #'
 #' @export
 
-fetch_ade_tables <- function(url) {
+fetch_ade_tables <- function(url, sleep_time = 1) {
 	# TODO: Make recursion a method instead
 	
 	if (length(url) > 1) {
@@ -18,6 +19,8 @@ fetch_ade_tables <- function(url) {
 	} else if (is.null(url)) {
 		return(NULL)
 	}
+	
+	Sys.sleep(sleep_time)
 	
 	frequency_labels <- c("almindelige", # covers very common, common and not common
 						  "sj\u00e6ldne", # sjældne; covers rare and very rare
