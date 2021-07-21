@@ -4,10 +4,12 @@
 \alias{fetch_ade_tables}
 \title{Fetch ADE tables from product pages}
 \usage{
-fetch_ade_tables(url)
+fetch_ade_tables(url, sleep_time = 1)
 }
 \arguments{
 \item{url}{character vector, full URL(s) for product page(s).}
+
+\item{sleep_time}{number, number of seconds to hault execution, useful for avoiding loading a large number of pages in a very short amount of time.}
 }
 \value{
 
