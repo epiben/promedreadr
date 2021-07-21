@@ -33,14 +33,17 @@ extract_product_urls <- function(atc) {
 #' Fetch product name from product page
 #'
 #' @param url string, full URL to product page on pro.medicin.dk. Maybe be a vector of several URLs
+#' @param sleep_time number, number of seconds to hault execution, useful for avoiding loading a large number of pages in a very short amount of time.
 #'
 #' @return Title of product page as character.
 #' @export
 #'
-fetch_product_name <- function(url) {
+fetch_product_name <- function(url, sleep_time = 1) {
 	if (length(url) > 1) {
 		return(purrr::map_chr(url, fetch_product_name))
 	}
+	
+	Sys.sleep(sleep_time)
 	
 	rvest::read_html(url) %>% 
 		rvest::html_element("h1.ptitle") %>% 
