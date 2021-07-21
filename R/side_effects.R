@@ -34,8 +34,8 @@ fetch_ade_tables <- function(url, sleep_time = 1) {
 		purrr::keep(~ any(grepl(frequency_regex, .[, 1], ignore.case = TRUE))) %>%
 		purrr::map(dplyr::transmute,
 				   frequency = X1,
-				   ades = stringr::str_replace_all(X2, c(".\\r\\n" = ", 
-				   									  ", "\\s+" = " ", 
+				   ades = stringr::str_replace_all(X2, c(".\\r\\n" = ", ", 
+				   									  "\\s+" = " ", 
 				   									  ".$" = ""))
 				   )
 
