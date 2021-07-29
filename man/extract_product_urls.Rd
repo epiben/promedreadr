@@ -4,13 +4,17 @@
 \alias{extract_product_urls}
 \title{Extract full URLs for product with a given ATC code}
 \usage{
-extract_product_urls(atc)
+extract_product_urls(atc, sleep_time = 1)
 }
 \arguments{
 \item{atc}{string, potentially a vector}
+
+\item{sleep_time}{number, number of seconds to hault execution, useful for
+avoiding loading a large number of pages in a very short amount of time.}
 }
 \value{
-character vector of full URLs to products that appear when querying pro.medicin.dk for the input ATC.
+character vector of full URLs to products that appear when querying
+  pro.medicin.dk for the input ATC.
 }
 \description{
 Extract full URLs for product with a given ATC code

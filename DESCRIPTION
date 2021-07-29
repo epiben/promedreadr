@@ -9,9 +9,9 @@ Description: More about what it does (maybe more than one line)
 License: MIT + file LICENSE
 Imports:
 	dplyr,
-	forcats,
 	magrittr,
 	purrr,
+	rlang,
 	rvest,
 	tidyr,
 	stringr

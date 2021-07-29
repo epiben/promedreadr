@@ -18,7 +18,7 @@ simplify_ades(ade_table, sep = " | ", ...)
   }}
 }
 \value{
-
+String or perhaps vector of strings, depending on input.
 }
 \description{
 Make a single-line strings with all ADEs, still grouped by frequency
