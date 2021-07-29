@@ -5,7 +5,7 @@
 #' @param url character vector, full URL(s) for product page(s).
 #' @inheritParams fetch_product_name
 #'
-#' @return
+#' @return Side effects in tidy tibble.
 #'
 #' @importFrom magrittr %>%
 #'
@@ -16,7 +16,9 @@ fetch_ade_tables <- function(url, sleep_time = 1) {
 	
 	if (length(url) > 1) {
 		return(map_valid(url, fetch_ade_tables))
-	} else if (is.null(url)) {
+	} 
+	
+	if (is.na(url) | is.null(url)) {
 		return(NULL)
 	}
 	
@@ -28,17 +30,24 @@ fetch_ade_tables <- function(url, sleep_time = 1) {
 						  )
 	frequency_regex <- paste(sprintf("(%s)", frequency_labels), collapse = "|")
 	
+	replacements <- c("\\r\\n\\s+\\(" = " \\(", 
+					  ".\\r\\n\\s+" = ", ", 
+					  "\\s+" = " ", 
+					  ".$" = "")
+	
 	out <- rvest::read_html(url) %>%
 		rvest::html_elements("table") %>%
 		purrr::map(rvest::html_table) %>%
+		purrr::keep(~ !rlang::is_empty(.)) %>% 
 		purrr::keep(~ any(grepl(frequency_regex, .[, 1], ignore.case = TRUE))) %>%
 		purrr::map(dplyr::transmute,
 				   frequency = X1,
-				   ades = stringr::str_replace_all(X2, c(".\\r\\n" = ", ", 
-				   									  "\\s+" = " ", 
-				   									  ".$" = ""))
-				   )
-
+				   side_effects = stringr::str_replace_all(X2, replacements)) %>% 
+		purrr::map(dplyr::mutate,
+				   side_effects = lapply(side_effects, split_list)) %>% 
+		purrr::map(tidyr::unnest, 
+				   cols = "side_effects")
+	
 	if (length(out) > 0) {
 		return(out)
 	} else {
@@ -62,17 +71,24 @@ reconcile_ade_tables <- function(ade_tables, ...) {
 		return(map_valid(ade_tables, reconcile_ade_tables, level = 2))
 	}
 	
-	# Unname avoids warning "Outer names are only allowed for unnamed scalar 
+	if (all(sapply(ade_tables, is.null))) {
+		return(NULL)
+	}
+	
+	# Specify levels to ensure correct ordering
+	frequency_levels <- c("Meget almindelige (> 10%)",
+						  "Almindelige (1-10%)", 
+						  "Ikke almindelige (0,1-1%)",
+						  "Sj\u00e6ldne (0,01-0,1%)", # sjældne
+						  "Meget sj\u00e6ldne (< 0,01%)", # idem
+						  "Ikke kendt")
+	
+	# unname() avoids warning "Outer names are only allowed for unnamed scalar 
 	# atomic inputs" from dplyr::bind_rows()
 	unname(ade_tables) %>% 
-		dplyr::bind_rows() %>%
-		dplyr::mutate(frequency = forcats::fct_inorder(frequency)) %>% 
-			# ensure correct ordering after summarising
-		dplyr::group_by(frequency) %>%
-		dplyr::summarise(ades = find_unique_set(ades),
-						 .groups = "drop") %>%
-		dplyr::mutate(frequency = as.character(frequency)) 
-			# avoid downstream weirdness due to factor type
+		dplyr::bind_rows() %>% 
+		dplyr::mutate(frequency = factor(frequency, levels = frequency_levels)) %>% 
+		dplyr::distinct(frequency, side_effects) 
 }
 
 #' Make a single-line strings with all ADEs, still grouped by frequency
@@ -92,7 +108,10 @@ simplify_ades <- function(ade_table, sep = " | ", ...) {
 		return(map_valid(ade_table, simplify_ades, level = 2))
 	}
 	
-	with(ade_table, sprintf("%s: %s", frequency, ades)) %>%
+	ade_table %>% 
+		group_by(frequency) %>% 
+		summarise(side_effects = paste(side_effects, collapse = ", ")) %>% 
+		with(sprintf("%s: %s", frequency, side_effects)) %>%
 		paste(collapse = sep)
 }
 
