@@ -3,7 +3,6 @@
 #' @param atc string, potentially a vector
 #' @param sleep_time number, number of seconds to hault execution, useful for
 #'   avoiding loading a large number of pages in a very short amount of time.
-#' @inheritDotParams reconcile_ade_tables
 #'
 #' @return character vector of full URLs to products that appear when querying
 #'   pro.medicin.dk for the input ATC.

@@ -3,7 +3,7 @@
 #' ADE tables are fetches if they exist (based on a quite simplistic heuristic about their content.)
 #'
 #' @param url character vector, full URL(s) for product page(s).
-#' @inheritParams fetch_product_name
+#' @inheritParams extract_product_urls
 #'
 #' @return Side effects in tidy tibble.
 #'
@@ -60,12 +60,13 @@ fetch_ade_tables <- function(url, sleep_time = 1) {
 #' @param ade_tables list of data frame with appropriate layout
 #' @param ... used for recursion, anything specified will be ignored
 #'
-#' @return
+#' @return One tibble per ATC with the union of side effects reported for
+#'   products with that ATC.
 #'
 #' @importFrom magrittr %>%
 #'
 #' @export
-#'
+#' 
 reconcile_ade_tables <- function(ade_tables, ...) {
 	if (length(ade_tables) > 1 & is.null(list(...)$level)) {
 		return(map_valid(ade_tables, reconcile_ade_tables, level = 2))
@@ -97,7 +98,7 @@ reconcile_ade_tables <- function(ade_tables, ...) {
 #' @param sep string, the separator between side effect frequency groups
 #' @inheritDotParams reconcile_ade_tables
 #'
-#' @return
+#' @return String or perhaps vector of strings, depending on input.
 #'
 #' @importFrom magrittr %>%
 #'
