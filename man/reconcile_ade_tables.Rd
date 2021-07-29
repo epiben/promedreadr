@@ -12,7 +12,8 @@ reconcile_ade_tables(ade_tables, ...)
 \item{...}{used for recursion, anything specified will be ignored}
 }
 \value{
-
+One tibble per ATC with the union of side effects reported for
+  products with that ATC.
 }
 \description{
 Title

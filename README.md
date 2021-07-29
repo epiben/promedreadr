@@ -9,7 +9,7 @@ The goal of `promedreadr` is to provide a simple tool for collecting information
 
 ## Just because you can doesn't mean you should
 
-Please use this package thoughtfully as web-scraping can lead to e.g. copyright infringement. If in doubt, please contact the team behind ![medicin.dk](https://www.medicin.dk).
+Please use this package thoughtfully as web-scraping can lead to e.g. copyright infringement. If in doubt, please contact the team behind [medicin.dk](https://www.medicin.dk).
 
 ## Features
 
@@ -34,25 +34,36 @@ combined_ade_tables <- reconcile_ade_tables(all_ade_tables)
 
 combined_ade_tables
 #> $Quetiapin
-#> # A tibble: 6 x 2
-#>   frequency             ades                                                    
-#>   <chr>                 <chr>                                                   
-#> 1 Meget almindelige (>… Abstinenser*, Anæmi, Døsighed, Ekstrapyramidale gener, …
-#> 2 Almindelige (1-10%)   Abnorme drømme, Dysartri, Dyspepsi, Dyspnø, Eosinofili,…
-#> 3 Ikke almindelige (0,… (herunder allergiske hudreaktioner), Bradykardi, Diabet…
-#> 4 Sjældne (0,01-0,1%)   Agranulocytose, Dyb venetrombose, Hepatitis, Hypotermi,…
-#> 5 Meget sjældne (< 0,0… Anafylaktisk reaktion, Angioødem, Rhabdomyolyse, Steven…
-#> 6 Ikke kendt            Cerebrovaskulære tilfælde, DRESS - lægemiddelreaktion m…
+#> # A tibble: 65 x 2
+#>    frequency                 side_effects          
+#>    <fct>                     <chr>                 
+#>  1 Meget almindelige (> 10%) Anæmi                 
+#>  2 Meget almindelige (> 10%) Mundtørhed            
+#>  3 Meget almindelige (> 10%) Abstinenser*          
+#>  4 Meget almindelige (> 10%) Svimmelhed            
+#>  5 Meget almindelige (> 10%) Nedsat HDL            
+#>  6 Meget almindelige (> 10%) Vægtøgning            
+#>  7 Meget almindelige (> 10%) Hyperkolesterolæmi    
+#>  8 Meget almindelige (> 10%) Hypertriglyceridæmi   
+#>  9 Meget almindelige (> 10%) Ekstrapyramidale gener
+#> 10 Meget almindelige (> 10%) Hovedpine             
+#> # … with 55 more rows
 #> 
 #> $Lithium
-#> # A tibble: 5 x 2
-#>   frequency             ades                                                    
-#>   <chr>                 <chr>                                                   
-#> 1 Meget almindelige (>… Nefrogen diabetes insipidus, Vægtøgning                 
-#> 2 Almindelige (1-10%)   Abdominalsmerter, Acne, Bevidsthedspåvirkning, Diarré, …
-#> 3 Ikke almindelige (0,… Alopeci, Arytmier, AV-blok, Muskelsvaghed, Parkinsonism…
-#> 4 Sjældne (0,01-0,1%)   Malignt neuroleptikasyndrom                             
-#> 5 Ikke kendt            Agranulocytose, Artralgi, Ataksi, Benign intrakraniel t…
+#> # A tibble: 55 x 2
+#>    frequency                 side_effects               
+#>    <fct>                     <chr>                      
+#>  1 Meget almindelige (> 10%) Vægtøgning                 
+#>  2 Meget almindelige (> 10%) Nefrogen diabetes insipidus
+#>  3 Almindelige (1-10%)       Hypertyroidisme            
+#>  4 Almindelige (1-10%)       Hypotyroidisme             
+#>  5 Almindelige (1-10%)       Struma                     
+#>  6 Almindelige (1-10%)       Abdominalsmerter           
+#>  7 Almindelige (1-10%)       Diarré                     
+#>  8 Almindelige (1-10%)       Kvalme                     
+#>  9 Almindelige (1-10%)       Eeg-forandringer           
+#> 10 Almindelige (1-10%)       Ekg-forandringer           
+#> # … with 45 more rows
 ```
 
 ## Installation

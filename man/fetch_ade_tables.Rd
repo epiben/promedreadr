@@ -9,10 +9,11 @@ fetch_ade_tables(url, sleep_time = 1)
 \arguments{
 \item{url}{character vector, full URL(s) for product page(s).}
 
-\item{sleep_time}{number, number of seconds to hault execution, useful for avoiding loading a large number of pages in a very short amount of time.}
+\item{sleep_time}{number, number of seconds to hault execution, useful for
+avoiding loading a large number of pages in a very short amount of time.}
 }
 \value{
-
+Side effects in tidy tibble.
 }
 \description{
 ADE tables are fetches if they exist (based on a quite simplistic heuristic about their content.)

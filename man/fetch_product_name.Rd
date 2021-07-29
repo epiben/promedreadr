@@ -4,12 +4,10 @@
 \alias{fetch_product_name}
 \title{Fetch product name from product page}
 \usage{
-fetch_product_name(url, sleep_time = 1)
+fetch_product_name(url)
 }
 \arguments{
 \item{url}{string, full URL to product page on pro.medicin.dk. Maybe be a vector of several URLs}
-
-\item{sleep_time}{number, number of seconds to hault execution, useful for avoiding loading a large number of pages in a very short amount of time.}
 }
 \value{
 Title of product page as character.
