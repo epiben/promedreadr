@@ -39,3 +39,8 @@ split_list <- function(x, sep = ",") {
 map_valid <- function(x, fun, ...) {
 	purrr::map_if(x, ~ !is.null(.), fun, ...)
 }
+
+#' Import pipe operator from magrittr
+#' 
+#' @importFrom magrittr %>%
+NULL

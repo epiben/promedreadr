@@ -7,10 +7,8 @@
 #' @return character vector of full URLs to products that appear when querying
 #'   pro.medicin.dk for the input ATC.
 #'
-#' @importFrom magrittr %>%
-#'
 #' @export
-
+#' 
 extract_product_urls <- function(atc, sleep_time = 1) {
 	if (length(atc) > 1) {
 		return(purrr::map(atc, extract_product_urls))
