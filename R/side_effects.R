@@ -7,10 +7,8 @@
 #'
 #' @return Side effects in tidy tibble.
 #'
-#' @importFrom magrittr %>%
-#'
 #' @export
-
+#' 
 fetch_ade_tables <- function(url, sleep_time = 1) {
 	# TODO: Make recursion a method instead
 	
@@ -63,8 +61,6 @@ fetch_ade_tables <- function(url, sleep_time = 1) {
 #' @return One tibble per ATC with the union of side effects reported for
 #'   products with that ATC.
 #'
-#' @importFrom magrittr %>%
-#'
 #' @export
 #' 
 reconcile_ade_tables <- function(ade_tables, ...) {
@@ -100,8 +96,6 @@ reconcile_ade_tables <- function(ade_tables, ...) {
 #'
 #' @return String or perhaps vector of strings, depending on input.
 #'
-#' @importFrom magrittr %>%
-#'
 #' @export
 #'
 simplify_ades <- function(ade_table, sep = " | ", ...) {
@@ -110,8 +104,8 @@ simplify_ades <- function(ade_table, sep = " | ", ...) {
 	}
 	
 	ade_table %>% 
-		group_by(frequency) %>% 
-		summarise(side_effects = paste(side_effects, collapse = ", ")) %>% 
+		dplyr::group_by(frequency) %>% 
+		dplyr::summarise(side_effects = paste(side_effects, collapse = ", ")) %>% 
 		with(sprintf("%s: %s", frequency, side_effects)) %>%
 		paste(collapse = sep)
 }

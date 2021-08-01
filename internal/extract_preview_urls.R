@@ -5,8 +5,6 @@
 #'
 #' @return
 #'
-#' @importFrom magrittr %>%
-
 extract_preview_urls <- function(query, max_n_spcs = 3, ...) {
 	remote_driver <- create_remote_driver(check = FALSE, ...)
 
