@@ -17,9 +17,12 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Build Status](https://travis-ci.com/epiben/promedreadr.svg?token=jPFag7F7DJzmhXYLiSqy&branch=main)](https://travis-ci.com/epiben/promedreadr)
+![Version](https://img.shields.io/badge/version-0.1.0-informational.svg)
 <!-- badges: end -->
 
 The goal of `promedreadr` is to provide a simple tool for collecting information from https://pro.medicin.dk, a key reference on medicines marketed in Denmark. 
+
+Note that the package is not yet "production ready", especially it doesn't yet honour robots.txt (this improvement is underway and will be up shortly.)
 
 ## Just because you can doesn't mean you should
 Please use this package thoughtfully as web-scraping can lead to e.g. copyright infringement. If in doubt, please contact the team behind [medicin.dk](https://www.medicin.dk).
@@ -32,8 +35,6 @@ Please use this package thoughtfully as web-scraping can lead to e.g. copyright 
 - Can produce handy, single-line lists of side effects, by frequencies
 
 ## Example
-
-This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 library(promedreadr)
