@@ -86,7 +86,7 @@ from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools") # if not already installed
-devtools::install_github("epiben/promedreadr")
+remotes::install_github("epiben/promedreadr")
 ```
 
 ## Contributing

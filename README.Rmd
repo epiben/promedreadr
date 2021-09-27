@@ -55,7 +55,7 @@ combined_ade_tables
 
 ```{r eval=FALSE}
 # install.packages("devtools") # if not already installed
-devtools::install_github("epiben/promedreadr")
+remotes::install_github("epiben/promedreadr")
 ```
 
 ## Contributing
