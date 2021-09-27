@@ -35,12 +35,14 @@ split_list <- function(x, sep = ",") {
 #' @param ... arguments passed to function
 #'
 #' @export
-
+#' 
 map_valid <- function(x, fun, ...) {
 	purrr::map_if(x, ~ !is.null(.), fun, ...)
 }
 
 #' Import pipe operator from magrittr
-#' 
+#'
 #' @importFrom magrittr %>%
-NULL
+#' @noRd
+#'
+empty <- function() NULL # NULL used to be enough, but now roxygen complains about missing @title
