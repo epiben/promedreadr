@@ -39,7 +39,7 @@ Please use this package thoughtfully as web-scraping can lead to e.g. copyright 
 ```{r example}
 library(promedreadr)
 
-atc_codes <- c(Quetiapin = "N05AH04",
+atc_codes <- c(Quetiapine = "N05AH04",
 			   Lithium = "N05AN01")
 
 product_urls <- extract_product_urls(atc_codes)
