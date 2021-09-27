@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Build
-Status](https://travis-ci.com/epiben/promedreadr.svg?token=jPFag7F7DJzmhXYLiSqy&branch=main)](https://travis-ci.com/epiben/promedreadr)
+Status](https://app.travis-ci.com/epiben/promedreadr.svg?branch=main)](https://app.travis-ci.com/epiben/promedreadr)
 ![Version](https://img.shields.io/badge/version-0.1.0-informational.svg)
 <!-- badges: end -->
 
@@ -38,7 +38,7 @@ e.g. copyright infringement. If in doubt, please contact the team behind
 ``` r
 library(promedreadr)
 
-atc_codes <- c(Quetiapin = "N05AH04",
+atc_codes <- c(Quetiapine = "N05AH04",
                Lithium = "N05AN01")
 
 product_urls <- extract_product_urls(atc_codes)
@@ -46,7 +46,7 @@ all_ade_tables <- fetch_ade_tables(product_urls)
 combined_ade_tables <- reconcile_ade_tables(all_ade_tables)
 
 combined_ade_tables
-#> $Quetiapin
+#> $Quetiapine
 #> # A tibble: 65 × 2
 #>    frequency                  side_effects          
 #>    <fct>                      <chr>                 
