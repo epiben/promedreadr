@@ -15,8 +15,8 @@ information from <https://pro.medicin.dk>, a key reference on medicines
 marketed in Denmark.
 
 Note that the package is not yet “production ready”, especially it
-doesn’t yet honour robots.txt (this improvement is underway and will be
-up shortly.)
+doesn’t yet honour robots.txt (improvement is underway and will be up
+shortly.)
 
 ## Just because you can doesn’t mean you should
 
@@ -48,34 +48,34 @@ combined_ade_tables <- reconcile_ade_tables(all_ade_tables)
 combined_ade_tables
 #> $Quetiapin
 #> # A tibble: 65 × 2
-#>    frequency side_effects          
-#>    <fct>     <chr>                 
-#>  1 <NA>      Anæmi                 
-#>  2 <NA>      Mundtørhed            
-#>  3 <NA>      Abstinenser*          
-#>  4 <NA>      Svimmelhed            
-#>  5 <NA>      Nedsat HDL            
-#>  6 <NA>      Vægtøgning            
-#>  7 <NA>      Hyperkolesterolæmi    
-#>  8 <NA>      Hypertriglyceridæmi   
-#>  9 <NA>      Ekstrapyramidale gener
-#> 10 <NA>      Hovedpine             
+#>    frequency                  side_effects          
+#>    <fct>                      <chr>                 
+#>  1 Meget almindelige (> 10 %) Anæmi                 
+#>  2 Meget almindelige (> 10 %) Mundtørhed            
+#>  3 Meget almindelige (> 10 %) Abstinenser*          
+#>  4 Meget almindelige (> 10 %) Svimmelhed            
+#>  5 Meget almindelige (> 10 %) Nedsat HDL            
+#>  6 Meget almindelige (> 10 %) Vægtøgning            
+#>  7 Meget almindelige (> 10 %) Hyperkolesterolæmi    
+#>  8 Meget almindelige (> 10 %) Hypertriglyceridæmi   
+#>  9 Meget almindelige (> 10 %) Ekstrapyramidale gener
+#> 10 Meget almindelige (> 10 %) Hovedpine             
 #> # … with 55 more rows
 #> 
 #> $Lithium
 #> # A tibble: 55 × 2
-#>    frequency side_effects               
-#>    <fct>     <chr>                      
-#>  1 <NA>      Vægtøgning                 
-#>  2 <NA>      Nefrogen diabetes insipidus
-#>  3 <NA>      Hypertyroidisme            
-#>  4 <NA>      Hypotyroidisme             
-#>  5 <NA>      Struma                     
-#>  6 <NA>      Abdominalsmerter           
-#>  7 <NA>      Diarré                     
-#>  8 <NA>      Kvalme                     
-#>  9 <NA>      Eeg-forandringer           
-#> 10 <NA>      Ekg-forandringer           
+#>    frequency                  side_effects               
+#>    <fct>                      <chr>                      
+#>  1 Meget almindelige (> 10 %) Vægtøgning                 
+#>  2 Meget almindelige (> 10 %) Nefrogen diabetes insipidus
+#>  3 Almindelige (1-10 %)       Hypertyroidisme            
+#>  4 Almindelige (1-10 %)       Hypotyroidisme             
+#>  5 Almindelige (1-10 %)       Struma                     
+#>  6 Almindelige (1-10 %)       Abdominalsmerter           
+#>  7 Almindelige (1-10 %)       Diarré                     
+#>  8 Almindelige (1-10 %)       Kvalme                     
+#>  9 Almindelige (1-10 %)       Eeg-forandringer           
+#> 10 Almindelige (1-10 %)       Ekg-forandringer           
 #> # … with 45 more rows
 ```
 

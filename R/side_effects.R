@@ -73,11 +73,11 @@ reconcile_ade_tables <- function(ade_tables, ...) {
 	}
 	
 	# Specify levels to ensure correct ordering
-	frequency_levels <- c("Meget almindelige (> 10%)",
-						  "Almindelige (1-10%)", 
-						  "Ikke almindelige (0,1-1%)",
-						  "Sj\u00e6ldne (0,01-0,1%)", # sjældne
-						  "Meget sj\u00e6ldne (< 0,01%)", # idem
+	frequency_levels <- c("Meget almindelige (> 10 %)",
+						  "Almindelige (1-10 %)", 
+						  "Ikke almindelige (0,1-1 %)",
+						  "Sj\u00e6ldne (0,01-0,1 %)", # sjældne
+						  "Meget sj\u00e6ldne (< 0,01 %)", # idem
 						  "Ikke kendt")
 	
 	# unname() avoids warning "Outer names are only allowed for unnamed scalar 
