@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Build
-Status](https://travis-ci.com/epiben/promedreadr.svg?token=jPFag7F7DJzmhXYLiSqy&branch=main)](https://travis-ci.com/epiben/promedreadr)
+Status](https://app.travis-ci.com/epiben/promedreadr.svg?branch=main)](https://app.travis-ci.com/epiben/promedreadr)
 ![Version](https://img.shields.io/badge/version-0.1.0-informational.svg)
 <!-- badges: end -->
 
