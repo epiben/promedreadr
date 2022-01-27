@@ -5,8 +5,6 @@
 
 <!-- badges: start -->
 
-[![Build
-Status](https://app.travis-ci.com/epiben/promedreadr.svg?branch=main)](https://app.travis-ci.com/epiben/promedreadr)
 ![Version](https://img.shields.io/badge/version-0.1.0-informational.svg)
 [![DOI](https://zenodo.org/badge/385842006.svg)](https://zenodo.org/badge/latestdoi/385842006)
 [![R build
