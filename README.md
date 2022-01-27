@@ -8,6 +8,9 @@
 [![Build
 Status](https://app.travis-ci.com/epiben/promedreadr.svg?branch=main)](https://app.travis-ci.com/epiben/promedreadr)
 ![Version](https://img.shields.io/badge/version-0.1.0-informational.svg)
+[![DOI](https://zenodo.org/badge/385842006.svg)](https://zenodo.org/badge/latestdoi/385842006)
+[![R build
+status](https://github.com/epiben/promedreadr/workflows/R-CMD-check/badge.svg)](https://github.com/epiben/promedreadr/actions)
 <!-- badges: end -->
 
 The goal of `promedreadr` is to provide a simple tool for collecting
@@ -47,7 +50,7 @@ combined_ade_tables <- reconcile_ade_tables(all_ade_tables)
 
 combined_ade_tables
 #> $Quetiapine
-#> # A tibble: 65 × 2
+#> # A tibble: 70 × 2
 #>    frequency                  side_effects          
 #>    <fct>                      <chr>                 
 #>  1 Meget almindelige (> 10 %) Anæmi                 
@@ -60,7 +63,7 @@ combined_ade_tables
 #>  8 Meget almindelige (> 10 %) Hypertriglyceridæmi   
 #>  9 Meget almindelige (> 10 %) Ekstrapyramidale gener
 #> 10 Meget almindelige (> 10 %) Hovedpine             
-#> # … with 55 more rows
+#> # … with 60 more rows
 #> 
 #> $Lithium
 #> # A tibble: 55 × 2
