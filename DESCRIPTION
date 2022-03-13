@@ -1,7 +1,7 @@
 Package: promedreadr
 Type: Package
 Title: Read Select Pharmacovigilance Information from pro.medicin.dk
-Version: 0.1.0
+Version: 0.1.0.9000
 Author: Benjamin Skov Kaas-Hansen
 Maintainer: Benjamin Skov Kaas-Hansen <epiben@hey.com>
 Description: More about what it does (maybe more than one line)
