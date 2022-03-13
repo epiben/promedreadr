@@ -4,7 +4,7 @@
 # promedreadr
 
 <!-- badges: start -->
-![Version](https://img.shields.io/badge/version-0.1.0-informational.svg)
+![Version](https://img.shields.io/badge/version-0.1.0.9000-informational.svg)
 [![DOI](https://zenodo.org/badge/385842006.svg)](https://zenodo.org/badge/latestdoi/385842006)
 [![R build
 status](https://github.com/epiben/promedreadr/workflows/R-CMD-check/badge.svg)](https://github.com/epiben/promedreadr/actions)
